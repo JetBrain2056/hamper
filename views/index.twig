@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang={{ lang }}>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">                
+        <title>Hamper</title>              
+    </head>
+    <body style='background-color: #EEEEEE;'>
+        <span style='color: #003366;'>                    
+            <header>
+                <div class="navbar fixed-top">
+                    <div>
+                      <div style="font-size: 30px" class="navtitle">Hamper Controller</div>
+                      <span style="color:blue; font-size: 22px" class="navdata" id = "digital_watch">00:00:00</span>                                           
+                      <div></div>Server status: <span id = "server">---</span>   
+                    </div>
+                </div>
+            </header>
+            <div class="menu">
+                <div>                                    
+                    <span>Датчики температуры, °C:</span>
+                    T1=<span style="color:#9090ff" id="t1"> - - - </span>
+                    T2=<span style="color:#FF3232" id="t2"> - - - </span>
+                    T3=<span style="color:#9090ff" id="t3"> - - - </span>
+                    T4=<span style="color:#9090ff" id="t4"> - - - </span>
+                    T5=<span style="color:#9090ff" id="t5"> - - - </span>
+                </div>     
+                <div>                    
+                    <span>Датчик давления:</span>
+                    P1=<span style="color:#6b0a49" id="p1"> - - - </span> mV
+                    P2=<span style="color:#6b0a49" id="p2"> - - - </span> mV
+                    P3=<span style="color:#6b0a49" id="p3"> - - - </span> kPa              
+                    T6=<span style="color:#6b0a49" id="t6"> - - - </span> °C  
+                </div>                              
+            </div>
+            <form> 
+                <p>Ростер ON/OFF:</p>
+                <div>
+                    <input type='radio' id='ID_ON' name='operation_mode'> <label style='color:green' for='ID_ON'>ON</label>                    
+                    <input type='radio' id='ID_OFF' name='operation_mode'> <label style='color:red' for='ID_OFF'>OFF</label> 
+                    <span>Status:</span><span id="RB_READY">- - -</span>
+                </div>
+            </form>                          
+            <br>            
+            <p>Мощность ТЭН №1 (закрытый):</p>                          
+            <input type="range" id="ten_power1" min="0" max="100" step="1" value="0" class='slider'>Value, %: <span id="ten1out">- - -</span>
+            Status: <span id="MOC2"> - - - </span> 
+            <br>
+            <p>Мощность ТЭН №2 (открытый):</p>                            
+            <input type="range" id="ten_power2" min="0" max="100" step="1" value="0" class='slider'>Value, %: <span id="ten2out">- - -</span>                                        
+            Status: <span id="MOC3"> - - - </span>  
+            <br>
+            <p>Воздушный поток (циклона):</p>                
+            <div> 
+                <input type="checkbox" id="fanswitch1" class="checkbox" onchange="fanswitch_1()">                        
+                <span id="MOC1"> Status:- - - </span>    
+            </div>                
+            <input type="range" id="fan1" min="0" max="100" step="5" value="0" class='slider'>Value, %: <span id="fan1out">- - -</span>                      
+            <br>
+            <p>Воздушный поток (охлаждения открытого ТЕНа №2):</p>                                
+            <div>
+                <input type="checkbox" id="fanswitch2" class="checkbox" onchange="fanswitch_2()">                        
+                <span id="MOC0"> Status:- - - </span>    
+            </div>                
+            <input type="range" id="fan2" min="0" max="100" step="5" value="0" class='slider'>Value, %: <span id="fan2out">- - -</span>        
+        </span>
+        <script src="./main.js"></script>   
+    </body>    
+</html>
