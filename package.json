@@ -1,7 +1,6 @@
 {
   "name": "hamper",
   "version": "1.0.0",
-  "description": "",
   "main": "./src/server.js",
   "scripts": {
     "dev": "nodemon ./src/server.js --open"
@@ -14,9 +13,12 @@
     "nodemon": "^2.0.20",
     "onoff": "^6.0.3",
     "twig": "^1.15.4",
+    "utf-8-validate": "^5.0.10",
     "ws": "^8.11.0"
   },
   "optionalDependencies": {
     "utf-8-validate": "^5.0.10"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
